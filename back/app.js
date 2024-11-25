@@ -7,12 +7,13 @@ var logger = require("morgan");
 require("dotenv").config();
 var session = require("express-session");
 var fileUpload = require("express-fileupload");
+var cors = require("cors");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
-
 var loginRouter = require("./routes/admin/login");
 var adminRouter = require("./routes/admin/paquetes");
+var apiRouter = require("./routes/api");
 
 var app = express();
 
@@ -57,6 +58,7 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/admin/login", loginRouter);
 app.use("/admin/paquetes", secured, adminRouter);
+app.use("/api", cors(), apiRouter);
 
 app.get("/", function (req, res) {
   var conocido = Boolean(req.session.nombre);

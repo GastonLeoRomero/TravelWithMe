@@ -2,7 +2,11 @@
   <div class="row">
     <div class="col-6 offset-3">
       <h3>Editar Paquete Turístico</h3>
-      <form action="/admin/paquetes/editar" method="post">
+      <form
+        action="/admin/paquetes/editar"
+        method="post"
+        enctype="multipart/form-data"
+      >
         <input type="hidden" value="{{paquete.id}}" name="id" />
         <div class="mb-3 row">
           <label for="">Destino</label>
@@ -21,6 +25,25 @@
             name="hotel"
             value="{{paquete.hotel}}"
           />
+        </div>
+        <div class="mb-3 row">
+          <p><label>Imagen:
+              <input
+                class="form-control"
+                type="file"
+                name="imagen"
+                id="imagen"
+              /></label></p>
+          <p><label><input
+                type="checkbox"
+                name="img_delete"
+                value="1"
+              />Eliminar imagen actual?</label>
+            <input
+              type="hidden"
+              name="img_original"
+              value="{{paquete.img_id}}"
+            /></p>
         </div>
         <div class="mb-3 row">
           <label for="">Paquete</label>

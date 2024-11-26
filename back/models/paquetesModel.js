@@ -29,12 +29,14 @@ async function getPaqueteById(id) {
   return rows[0];
 }
 
-async function editarNovedadById(obj, id) {
+async function editarPaqueteById(obj, id) {
   try {
     const query = "update paquetes set ? where id=?";
     const rows = await pool.query(query, [obj, id]);
+    console.log(rows);
     return rows;
   } catch (error) {
+    console.log(error);
     throw error;
   }
 }
@@ -44,5 +46,5 @@ module.exports = {
   insertPaquete,
   deletePaqueteById,
   getPaqueteById,
-  editarNovedadById,
+  editarPaqueteById,
 };

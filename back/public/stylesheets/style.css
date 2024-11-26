@@ -57,9 +57,9 @@ section {
 }
 
 div.section-title {
-  width: 70%;
+  width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: flex-start;
   padding: 0.5rem;
 }
@@ -71,6 +71,7 @@ div.section-title {
 h2 {
   color: #2e64a1;
   font-weight: 400;
+  text-align: center;
 }
 header {
   background-color: #0f5819;

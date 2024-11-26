@@ -3,12 +3,15 @@
   gap: 24px;
 }
 
-.contacto div {
+.contacto section {
   width: 100%;
 }
 
 .datos {
   font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .datos ul li {

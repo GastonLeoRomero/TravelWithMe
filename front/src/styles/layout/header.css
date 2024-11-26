@@ -1,15 +1,13 @@
 header {
-  background-color: #ebc16c;
-  padding: 16px 0;
+  background-color: #4137f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 header h1 {
-  color: rgb(123, 91, 2);
+  color: rgb(235, 235, 234);
   font-size: 40px;
   font-weight: 100;
   font-style: italic;
-  display: inline-block;
-  position: relative;
-  bottom: 35px;
-  margin-left: 10px;
 }

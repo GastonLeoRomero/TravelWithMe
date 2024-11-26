@@ -40,7 +40,7 @@ const Contacto = (props) => {
 
   return (
     <main className="holder contacto">
-      <div>
+      <section>
         <h2>Contactanos!</h2>
         <form
           action="/contacto"
@@ -89,16 +89,16 @@ const Contacto = (props) => {
         </form>
         {sending ? <p>Enviando mensaje...</p> : null}
         {msg ? <p>{msg}</p> : null}
-      </div>
+      </section>
       <br></br>
-      <div class="datos">
-        <h2>Otros medios de Comunicación</h2>
+      <section class="datos">
+        <h3>Otros medios de Comunicación</h3>
         <ul>
           <li>Teléfono: 123456789</li>
           <li>Email: gaston@turismo.com</li>
           <li>Instagram: turismo.gaston</li>
         </ul>
-      </div>
+      </section>
     </main>
   );
 };

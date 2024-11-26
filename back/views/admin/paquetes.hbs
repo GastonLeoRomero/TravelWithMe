@@ -48,4 +48,43 @@
       </div>
     </div>
   </section>
+  <section>
+    <div class="section-title">
+      <h2>Hoteles</h2>
+      <a href="/admin/hoteles/agregar" class="btn btn-success">Nuevo</a>
+    </div>
+    <div class="row">
+      <div class="col">
+        <table class="table">
+          <thead>
+            <tr class="table-dark">
+              <th scope="col">#</th>
+              <th scope="col">Destino</th>
+              <th scope="col">Imagen</th>
+              <th scope="col" class="text-center">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each paquetes}}
+              <tr>
+                <th scope="row">{{id}}</th>
+                <td>{{destino}}</td>
+                <td>{{{imagen}}}</td>
+                <td class="text-center">
+                  <a
+                    href="/admin/hoteles/editar/{{id}}"
+                    class="btn btn-secondary"
+                  >Editar</a>
+                  <a
+                    href="/admin/hoteles/eliminar/{{id}}"
+                    class="btn btn-secondary"
+                  >Eliminar</a>
+                </td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 </main>

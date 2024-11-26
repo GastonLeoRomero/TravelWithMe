@@ -14,9 +14,17 @@
 }
 
 body {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: "Averia Serif Libre", serif;
+  font-weight: 300;
+  font-style: normal;
   font-size: 16px;
   line-height: 20px;
+}
+
+a {
+  font-family: "Averia Serif Libre", serif;
+  text-decoration: none;
+  color: rgb(4, 9, 41);
 }
 
 .holder {
@@ -27,4 +35,11 @@ body {
 h2 {
   color: #2e64a1;
   font-weight: 400;
+}
+
+ul {
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
 }

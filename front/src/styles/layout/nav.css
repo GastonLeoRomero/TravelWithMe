@@ -1,9 +1,9 @@
 nav {
-  background-color: rgb(204, 219, 241);
-  margin-bottom: 20px;
+  background-color: rgba(14, 11, 178, 0.932);
+  margin-bottom: 40px;
 }
 
-nav ul {
+/* nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -28,4 +28,59 @@ nav ul li a:hover {
 
 nav ul li a.activo {
   background-color: #4c76a5;
+} */
+
+.sti {
+  position: sticky;
+  top: 0;
+  padding: 0.25rem;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.btn {
+  position: relative;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.2rem;
+  margin: 0 0.5rem;
+  width: 15rem;
+  height: 2.5rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0.25rem 0.25rem 0.5rem 0.25rem rgb(0, 0, 0, 0.15);
+  background-color: rgb(133, 141, 199);
+  color: white;
+}
+
+.btn a {
+  color: antiquewhite;
+}
+
+.anim-bottom::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0.25rem;
+  background-color: rgb(16, 3, 129);
+  transition: with 0.5s ease, left 0.5s ease, right 0.5s ease;
+}
+
+.anim-bottom:hover::after {
+  width: 100%;
+}
+
+.to-center::after {
+  left: 50%;
+}
+
+.to-center:hover:after {
+  left: 0;
 }

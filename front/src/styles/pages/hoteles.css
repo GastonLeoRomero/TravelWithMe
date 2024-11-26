@@ -1,0 +1,93 @@
+h2 {
+  color: black;
+}
+
+.spinner {
+  background-color: black;
+  width: 3vw;
+  height: 3vw;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  border: 0.5vw solid #000035;
+  border-left-color: cadetblue;
+  animation: spinner 1s ease-out infinite;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 997;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0008;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 500ms ease-in-out;
+}
+
+.modal:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-container {
+  position: relative;
+  border: thick double rgb(28, 6, 96);
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 70%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  overflow: hidden;
+  background-color: rgb(236, 239, 244);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 3rem;
+  height: 3rem;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  line-height: 3rem;
+  color: white;
+  background-color: rgb(37, 8, 140);
+  transition: background-color 300ms linear, transform 300ms ease-in-out;
+}
+
+.modal-close:hover {
+  background-color: rgb(227, 18, 18);
+  transform: scale(1.2);
+}
+
+img {
+  width: 100%;
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+.hotels-container {
+  width: 50%;
+  margin: 1rem auto;
+  padding: 1rem;
+}

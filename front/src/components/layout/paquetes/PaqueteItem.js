@@ -1,16 +1,17 @@
 import React from "react";
+import "../../../styles/pages/paquetes.css";
 
 const PaqueteItem = (props) => {
   const { destino, hotel, imagen, paquete } = props;
 
   return (
-    <div className="paquetes">
-      <h1>{destino}</h1>
-      <h2>{hotel}</h2>
-      <img src={imagen} />
+    <article className="paquetes">
+      <h3>{destino}</h3>
+      <h4>{hotel}</h4>
+      <img src={imagen} alt="" />
       <div dangerouslySetInnerHTML={{ __html: paquete }}></div>
       <hr></hr>
-    </div>
+    </article>
   );
 };
 

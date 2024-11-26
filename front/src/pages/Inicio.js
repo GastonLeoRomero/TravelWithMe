@@ -6,11 +6,11 @@ const Inicio = (props) => {
     <main className="holder">
       <img
         src="images/3O3JZKA6QBE2VJGEJFRLRXK7TM.jpg"
-        width="1000"
-        height="600"
+        width="900"
+        height="500"
         alt="turismo"
       />
-      <h2>Bienvenidos a Turismo.....</h2>
+      <h2>Bienvenidos a Turismo Gastón.....</h2>
       <p>Página dedicada al Turismo y Hoteleria a nivel mundial</p>
       <section>Algunos de nuestros destinos turísticos</section>
     </main>

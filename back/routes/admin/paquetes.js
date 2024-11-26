@@ -51,7 +51,9 @@ router.post("/agregar", async (req, res, next) => {
     }
 
     if (
+      req.body.nombre != "" &&
       req.body.destino != "" &&
+      req.body.noches != "" &&
       req.body.hotel != "" &&
       req.body.paquete != ""
     ) {
@@ -121,14 +123,16 @@ router.post("/editar", async (req, res, next) => {
     }
 
     const obj = {
+      nombre: req.body.nombre,
       destino: req.body.destino,
+      noches: req.body.noches,
       hotel: req.body.hotel,
       paquete: req.body.paquete,
       img_id,
     };
     console.log(obj);
 
-    await paquetesModel.editarNovedadById(obj, req.body.id);
+    await paquetesModel.editarPaqueteById(obj, req.body.id);
     res.redirect("/admin/paquetes");
   } catch (error) {
     console.log(error);

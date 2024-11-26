@@ -27,7 +27,9 @@ const Paquetes = (props) => {
         paquetes.map((item) => (
           <PaqueteItem
             key={item.id}
+            nombre={item.nombre}
             destino={item.destino}
+            noches={item.noches}
             hotel={item.hotel}
             imagen={item.imagen}
             paquete={item.paquete}

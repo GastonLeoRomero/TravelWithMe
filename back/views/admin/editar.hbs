@@ -9,12 +9,30 @@
       >
         <input type="hidden" value="{{paquete.id}}" name="id" />
         <div class="mb-3 row">
+          <label for="">Nombre Fantasía</label>
+          <input
+            type="text"
+            class="form-control"
+            name="nombre"
+            value="{{paquete.nombre}}"
+          />
+        </div>
+        <div class="mb-3 row">
           <label for="">Destino</label>
           <input
             type="text"
             class="form-control"
             name="destino"
             value="{{paquete.destino}}"
+          />
+        </div>
+        <div class="mb-3 row">
+          <label for="">Cantidad de noches</label>
+          <input
+            type="text"
+            class="form-control"
+            name="noches"
+            value="{{paquete.noches}}"
           />
         </div>
         <div class="mb-3 row">

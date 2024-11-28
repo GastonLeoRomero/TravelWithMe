@@ -12,8 +12,8 @@ router.get("/", async function (req, res, next) {
   paquetes = paquetes.map((paquete) => {
     if (paquete.img_id) {
       const imagen = cloudinary.image(paquete.img_id, {
-        width: 70,
-        height: 70,
+        width: 60,
+        height: 60,
         crop: "fill",
       });
       return {
@@ -53,6 +53,7 @@ router.post("/agregar", async (req, res, next) => {
     if (
       req.body.nombre != "" &&
       req.body.destino != "" &&
+      req.body.regimen != "" &&
       req.body.noches != "" &&
       req.body.hotel != "" &&
       req.body.paquete != ""
@@ -125,6 +126,7 @@ router.post("/editar", async (req, res, next) => {
     const obj = {
       nombre: req.body.nombre,
       destino: req.body.destino,
+      regimen: req.body.regimen,
       noches: req.body.noches,
       hotel: req.body.hotel,
       paquete: req.body.paquete,

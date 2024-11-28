@@ -2,16 +2,16 @@ import React from "react";
 import "../styles/pages/hoteles.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import HotelItem from "../components/layout/hoteles/HotelItem";
 import Buscadores from "../components/layout/buscador/Buscadores";
-import { filtros } from "../assets/const";
+import { filtrosHoteles } from "../assets/const";
+import HotelList from "../components/layout/hoteles/HotelList";
 
 const Hoteles = (props) => {
   /* --------------- HOOKS -------------------- */
 
   const [loading, setLoading] = useState(false);
-  const [filters, setFilters] = useState(filtros);
-  const [hotels, setHotels] = useState([]);
+  const [filtros, setFiltros] = useState(filtrosHoteles);
+  const [hoteles, setHoteles] = useState([]);
   const [hotelesFiltrados, setHotelesFiltrados] = useState([]);
 
   // Primera vez que carga la página
@@ -19,7 +19,7 @@ const Hoteles = (props) => {
     const cargarHoteles = async () => {
       setLoading(true);
       const response = await axios.get("http://localhost:3000/api/paquetes");
-      setHotels(response.data);
+      setHoteles(response.data);
       setHotelesFiltrados(response.data);
       setLoading(false);
     };
@@ -29,44 +29,45 @@ const Hoteles = (props) => {
 
   // Cada vez que se selecciona una opción en un filtro
   useEffect(() => {
-    let hotelsCopy = hotels.filter((hotel) => {
-      const selectedDestination = parseInt(filters[0].value);
-      const selectedNights = parseInt(filters[1].value);
+    let hotelesCopy = hoteles.filter((hotel) => {
+      const destinoSeleccionado = parseInt(filtros[0].value);
+      const regimenSeleccionado = parseInt(filtros[1].value);
       const destino = hotel.destino.toLowerCase();
-      const noches = hotel.noches.toLowerCase();
+      const regimen = hotel.regimen.toLowerCase();
       const opcionDestino =
-        filters[0].options[selectedDestination].toLowerCase();
-      const opcionNoches = filters[1].options[selectedNights].toLowerCase();
+        filtros[0].options[destinoSeleccionado].toLowerCase();
+      const opcionRegimen =
+        filtros[1].options[regimenSeleccionado].toLowerCase();
       const resultado =
         //filtra hoteles por destino
-        (destino === opcionDestino || filters[0].value === "0") &&
-        //filtra hoteles por cantidad de noches
-        (noches === opcionNoches || filters[1].value === "0");
+        (destino === opcionDestino || filtros[0].value === "0") &&
+        //filtra hoteles por regimen
+        (regimen === opcionRegimen || filtros[1].value === "0");
       return resultado;
     });
-    setHotelesFiltrados(hotelsCopy);
-  }, [filters]);
+    setHotelesFiltrados(hotelesCopy);
+  }, [filtros]);
 
   /* --------------- FUNCTIONS -------------------- */
 
   //Maneja el estado de los filtros
   const handleSelect = (i) => {
     return (e) => {
-      const copyFilters = [...filters];
-      copyFilters[i].value = e.target.value;
-      setFilters(copyFilters);
+      const copyFiltros = [...filtros];
+      copyFiltros[i].value = e.target.value;
+      setFiltros(copyFiltros);
     };
   };
 
   //Maneja el reseteo de los filtros
   const handleReset = () => {
-    const filtersCopy = filters.map((filter) => {
-      filter.value = "0";
-      return filter;
+    const filtrosCopy = filtros.map((filtro) => {
+      filtro.value = "0";
+      return filtro;
     });
-    setFilters(filtersCopy);
+    setFiltros(filtrosCopy);
     //Renderiza todo sin filtros
-    setHotels(hotels);
+    setHoteles(hoteles);
   };
 
   /* --------------- MAIN RENDER ------------------ */
@@ -76,25 +77,11 @@ const Hoteles = (props) => {
       <h2>Encontra tu mejor hotel</h2>
       <Buscadores
         id={"buscadores"}
-        filters={filters}
+        filters={filtros}
         selectHandler={handleSelect}
         resetHandler={handleReset}
       />
-      {loading ? (
-        <p>Cargando...</p>
-      ) : (
-        hotelesFiltrados.map((item) => (
-          <HotelItem
-            key={item.id}
-            nombre={item.nombre}
-            destino={item.destino}
-            noches={item.noches}
-            hotel={item.hotel}
-            imagen={item.imagen}
-            descripcion={item.paquete}
-          />
-        ))
-      )}
+      {loading ? <p>Cargando...</p> : <HotelList hoteles={hotelesFiltrados} />}
     </section>
   );
 };

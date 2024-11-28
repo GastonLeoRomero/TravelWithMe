@@ -83,7 +83,7 @@ const Contacto = (props) => {
               onChange={handleChange}
             ></textarea>
           </p>
-          <p class="acciones">
+          <p className="acciones">
             <input type="submit" value="Enviar"></input>
           </p>
         </form>
@@ -91,7 +91,7 @@ const Contacto = (props) => {
         {msg ? <p>{msg}</p> : null}
       </section>
       <br></br>
-      <section class="datos">
+      <section className="datos">
         <h3>Otros medios de Comunicación</h3>
         <ul>
           <li>Teléfono: 123456789</li>

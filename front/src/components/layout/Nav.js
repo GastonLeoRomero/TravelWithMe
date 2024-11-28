@@ -4,8 +4,8 @@ import "../../styles/layout/nav.css";
 
 const Nav = (props) => {
   return (
-    <nav class="sti">
-      <button class="btn anim-bottom to-center">
+    <nav className="sti">
+      <button className="btn anim-bottom to-center">
         <NavLink
           to="/"
           className={({ isActive }) => (isActive ? "activo" : undefined)}
@@ -14,7 +14,7 @@ const Nav = (props) => {
         </NavLink>
       </button>
 
-      <button class="btn anim-bottom to-center">
+      <button className="btn anim-bottom to-center">
         <NavLink
           to="/Hoteles"
           className={({ isActive }) => (isActive ? "activo" : undefined)}
@@ -23,7 +23,7 @@ const Nav = (props) => {
         </NavLink>
       </button>
 
-      <button class="btn anim-bottom to-center">
+      <button className="btn anim-bottom to-center">
         <NavLink
           to="/Paquetes"
           className={({ isActive }) => (isActive ? "activo" : undefined)}
@@ -32,7 +32,7 @@ const Nav = (props) => {
         </NavLink>
       </button>
 
-      <button class="btn anim-bottom to-center">
+      <button className="btn anim-bottom to-center">
         <NavLink
           to="/Contacto"
           className={({ isActive }) => (isActive ? "activo" : undefined)}

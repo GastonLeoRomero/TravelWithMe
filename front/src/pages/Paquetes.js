@@ -3,9 +3,12 @@ import axios from "axios";
 import PaqueteItem from "../components/layout/paquetes/PaqueteItem";
 
 const Paquetes = (props) => {
+  /* --------------- HOOKS -------------------- */
+
   const [loading, setLoading] = useState(false);
   const [paquetes, setPaquetes] = useState([]);
 
+  // primera vez que carga la página
   useEffect(() => {
     const cargarPaquetes = async () => {
       setLoading(true);
@@ -17,6 +20,8 @@ const Paquetes = (props) => {
 
     cargarPaquetes();
   }, []);
+
+  /* --------------- MAIN RENDER ------------------ */
 
   return (
     <section>
